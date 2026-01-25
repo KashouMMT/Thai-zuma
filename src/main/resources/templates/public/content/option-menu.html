@@ -1,0 +1,35 @@
+<th:block th:fragment="public-option-menu" xmlns:th="http://www.thymeleaf.org">
+	<header id="site-header"
+		class="d-flex flex-row justify-content-center align-items-start"
+		style="color: white; margin-top: 5rem"
+	>
+		<div class="d-flex flex-column w-100 text-center bg-dark p-2">
+			<h1 class="d-inline-block mx-auto fst-italic">𝒪𝓅𝓉𝒾𝑜𝓃 𝑀𝑒𝓃𝓊</h1>
+			<span class="mt-1">オプションメニュー</span>
+		</div>
+	</header>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<main>
+		<section>
+			<h2 class="section-title text-center">
+				オプションメニュー<br />
+				<span>OPTION MENU</span>
+			</h2>
+			<div class="container" style="font-weight:600;">
+				<hr />
+				<div class="row align-items-center">
+					<div class="col-6 fs-3" style="color:red;">Ｓ◯Ｘ</div>
+					<div class="col-6 text-end fs-3" style="color:red;">…ASK</div>
+				</div>
+				<hr />
+				<div class="row align-items-center">
+					<div class="col-6 fs-3" style="color:red;">VIDEO</div>
+					<div class="col-6 text-end fs-3" style="color:red;">…ASK</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
+		<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>
+	</main>
+</th:block>

@@ -1,0 +1,73 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-bottom-nav">
+	<section>
+		<div class="container">
+			<h3 class="text-center">ナビゲーション</h3>
+			<div class="row gx-2 mt-1 align-items-stretch">
+			    <div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">トップページ</span>
+			        </a>
+			    </div>
+			
+			    <div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/newcomers(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">本日の出勤セラピスト</span>
+			        </a>
+			    </div>
+			</div>
+			<div class="row gx-2 mt-1 align-items-stretch">
+				<div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/cast(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">セラピスト一覧</span>
+			        </a>
+			    </div>
+			
+			    <div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/pricing(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">料金システム</span>
+			        </a>
+			    </div>
+			</div>
+			<div class="row gx-2 mt-1 align-items-stretch">
+				<div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/option-menu(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">オプションメニュー</span>
+			        </a>
+			    </div>
+			    <div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/news(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">イベント情報</span>
+			        </a>
+			    </div>
+			</div>
+			<div class="row gx-2 mt-1 align-items-stretch">
+				<div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/review(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">レビュー</span>
+			        </a>
+			    </div>
+			    <div class="col-6 d-flex">
+			        <a th:href="@{/{lang}/home/contact-us(lang=${#locale.language})}"
+			           class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+			            <span class="nav-marble-link fs-6 fst-italic">各種SNS</span>
+			        </a>
+			    </div>
+			</div>
+			<div class="row gx-2 mt-1 align-items-stretch">
+				<div class="col-6 d-flex">
+					<a th:href="@{/{lang}/home/job-listing(lang=${#locale.language})}" 
+					class="nav-marble p-4 w-100 d-flex align-items-center justify-content-center text-center">
+						<span class="nav-marble-link fs-6 fst-italic">求人情報</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>

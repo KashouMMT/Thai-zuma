@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+<head>
+	<!-- ========== ENCODING ========== -->
+	<meta charset="utf-8">
+	
+	<!-- ========== VIEWPORT AND AUTHOR ========== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Rondo">
+	
+	<!-- ========== BASIC SEO TAGS ========== -->
+	<th:block th:if="${metaTitle != null && content != 'public/content/item' && content != 'public/content/single-blog'}"><title th:text="#{${metaTitle}}"></title></th:block>
+	<th:block th:if="${metaDescription != null && content != 'public/content/item' && content != 'public/content/single-blog'}"><meta name="description" th:content="#{${metaDescription}}" ></th:block>
+	
+	<th:block th:unless="${metaTitle != null && content != 'public/content/item' && content != 'public/content/single-blog'}"><title th:text="${metaTitle}"></title></th:block>
+	<th:block th:unless="${metaDescription != null && content != 'public/content/item' && content != 'public/content/single-blog'}"><meta name="description" th:content="${metaDescription}" ></th:block>
+	
+	
+	<th:block th:unless="${metaTitle != null}">
+		<title th:text="${metaTitle}"></title>
+	</th:block>
+	<th:block th:unless="${metaDescription != null}">
+		<meta name="description" th:content="${metaDescription}" >
+	</th:block>
+	
+	<!-- ========== OPEN GRAPH (FACEBOOK, LINE, KAKAO, etc.) ========== -->
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://rondo-thai.com/">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="https://clubartemis-thai.com/public/assets/images/logo_rondo.png">
+	<meta property="og:site_name" content="Rondo">
+	<meta property="og:locale" content="ja">
+	
+	<!-- ========== TWITTER CARD ========== -->
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="https://rondo-thai.com/public/assets/images/logo_rondo.png">
+	 
+	<!-- ========== ROBOTS TXT ========== -->
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- ========== SITEMAP ========== -->
+	
+	<meta name="sitemap" content="https://rondo-thai.com/sitemap.xml">
+	 
+	<!-- ========== CANONICAL ========== -->
+	<th:block th:if="${canonical != null}">
+		<link rel="canonical" th:href="${'https://rondo-thai.com/' + #locale.language + canonical}">
+	</th:block>
+	
+	<!-- ========== JSON-LD ========== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Rondo",
+  "url": "https://rondo-thai.com",
+  "image": "https://rondo-thai.com/public/assets/images/logo.png",
+  "description": "バンコク・パタヤで日本人向けの高級出張サービス。日本語対応で安心。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "TH",
+    "addressLocality": "Bangkok"
+  },
+  "areaServed": ["Bangkok","Pattaya","Phuket"],
+  "availableLanguage": ["Japanese","English"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["Japanese","English"],
+    "url": "https://lin.ee/33iRvq9"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://rondo-thai.com/ja/home"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Pricing",
+   "item": "https://rondo-thai.com/ja/home/pricing"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Cast",
+   "item": "https://rondo-thai.com/ja/home/cast"
+  },
+  {
+   "@type": "ListItem",
+   "position": 4,
+   "name": "Newcomers",
+   "item": "https://rondo-thai.com/ja/home/newcomers"
+  },
+  {
+   "@type": "ListItem",
+   "position": 5,
+   "name": "About",
+   "item": "https://rondo-thai.com/ja/home/option-menu"
+  }
+ ]
+}
+</script>
+	<!-- ========== STYLESHEETS ========== -->
+	<link rel="stylesheet" type="text/css" th:href="@{/public/bootstrap-5.3.7-dist/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/public/css/style.css}">
+	<link rel="icon" type="image/x-icon" th:href="@{/favicon.png}">
+</head>
+<body>
+
+	<div class="main-bg"></div>
+	<div class="content-wrapper box-shadow">
+		<th:block th:insert="~{public/components/public-menu-navbar :: public-menu-navbar}"></th:block>
+		<th:block th:insert="~{${content}}"></th:block>
+		<th:block th:insert="~{public/components/public-footer :: public-footer}"></th:block>
+	</div>
+	<!-- ========== SCRIPTS ========== -->
+	<th:block th:insert="~{public/components/public-scripts :: scripts}"></th:block>
+</body>
+</html>

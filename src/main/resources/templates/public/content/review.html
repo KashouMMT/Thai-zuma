@@ -1,0 +1,22 @@
+<th:block th:fragment="public-review" xmlns:th="http://www.thymeleaf.org">
+	<header id="site-header"
+		class="d-flex flex-row justify-content-center align-items-start"
+		style="color: white; margin-top: 5rem"
+	>
+		<div class="d-flex flex-column w-100 text-center bg-dark p-2">
+			<h1 class="d-inline-block mx-auto fst-italic">𝑅𝑒𝓋𝒾𝑒𝓌𝓈</h1>
+			<span class="mt-1">レビュー覧</span>
+		</div>
+	</header>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<main>
+		<section>
+			<h2 class="section-title text-center">
+				レビュー覧<br />
+				<span>REVIEWS</span>
+			</h2>
+		</section>
+		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
+		<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>
+	</main>
+</th:block>

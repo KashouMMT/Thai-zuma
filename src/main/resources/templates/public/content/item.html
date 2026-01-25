@@ -1,0 +1,85 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-item">
+	<header id="site-header"
+		class="d-flex flex-row justify-content-center align-items-start"
+		style="color: white; margin-top: 5rem"
+	>
+		<div class="d-flex flex-column w-100 text-center bg-dark p-2">
+			<h1 class="d-inline-block mx-auto fst-italic">𝒫𝓇𝑜𝒻𝒾𝓁𝑒</h1>
+			<span class="mt-1">セラピストプロフィール</span>
+		</div>
+	</header>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<main>
+		<section>
+			<h2 class="section-title text-center" 
+			th:utext="${product.title} + '<br ><span>プロフィール</span>'">
+			</h2>
+			<div class="container mt-4">
+				<!-- ================= PROFILE CARD ================= -->
+				<div class="row justify-content-center">
+					<div class="col-12">
+						<div class="card shadow-sm border-0">
+							<div class="row g-0">
+								<!-- Image Gallery -->
+								<div class="col-12 position-relative">
+									<div class="profile-gallery overflow-hidden">
+										<div class="gallery-track d-flex">
+											<th:block th:each="img : ${product.productImages}">
+												<img
+													th:src="@{'/files/' + ${img.filename}}"
+													class="gallery-image"
+													alt="Profile image"
+												/>
+											</th:block>
+								
+										</div>
+									</div>
+									<!-- Arrows -->
+									<button type="button" class="gallery-arrow left" onclick="prevImage()">‹</button>
+									<button type="button" class="gallery-arrow right" onclick="nextImage()">›</button>
+								</div>
+								<!-- Basic Info -->
+								<div class="col-12 col-md-7">
+									<div class="card-body">
+			
+										<h3 class="fw-bold mb-1" th:text="${product.title}"></h3>
+			
+										<span class="badge bg-danger mb-2"
+											th:if="${product.isNewcomer}">
+											NEW
+										</span>
+			
+										<!-- Stats -->
+										<ul class="list-unstyled small mt-3 mb-3">
+											<li>年齢：<span th:text="${product.age}"></span>歳</li>
+											<li>身長：<span th:text="${product.height}"></span>cm</li>
+											<li>スリーサイズ：<span th:text="${product.shortDescription}"></span></li>
+										</ul>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+			
+					</div>
+				</div>
+			
+				<!-- ================= FULL DESCRIPTION ================= -->
+				<div class="row justify-content-center mt-4">
+					<div class="col-12">
+						<h4 class="section-subtitle text-center mb-3">
+							プロフィール紹介
+						</h4>
+						<div class="bg-light rounded p-4 shadow-sm">
+							<p class="mb-0"
+								th:utext="${#strings.replace(product.description, '\n', '<br/>')}">
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
+		<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>
+	</main>
+</th:block>

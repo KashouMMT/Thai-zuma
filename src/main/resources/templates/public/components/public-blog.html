@@ -1,0 +1,23 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-blog(blogs)">
+	<div class="container">
+		<div th:each="blog : ${blogs}" class="row gx-4 gx-lg-5 bg-glass justify-content-center mb-5 mt-5 p-5 position-relative"
+		style="background-color: rgba(0,0,0,0.1)">
+			<a th:href="@{/{lang}/home/blog/{id}(id=${blog.id},lang=${#locale.language})}" class="stretched-link"></a>
+			<div class="col-12">
+				<img class="card-img object-fit-cover" th:src="@{'/files/' + ${blog.imageName}}" alt="Fancy Product">
+			</div>
+			<div class="col-12 justify-content-center align-items-center text-center">
+				<div class="d-flex justify-content-between align-items-start">
+					<span class="fs-4 fw-bolder" th:text="${blog.title}"></span>
+					<div class="d-flex flex-column align-items-end">
+						<span class="small text-white" th:text="${'Created At: ' + #temporals.format(blog.createdAt, 'yyyy-mm-dd HH:mm')}"></span>
+						<span class="small text-white" th:text="${'Updated At: ' + #temporals.format(blog.updatedAt, 'yyyy-mm-dd HH:mm')}"></span>
+					</div>
+				</div>
+				<div class="mt-3 text-start">
+					<p th:utext="${blog.content}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<th:block th:fragment="public-collection">
+		<header id="site-header"
+			class="d-flex flex-row justify-content-center align-items-start"
+			style="color: white; margin-top: 5rem"
+		>
+			<div class="d-flex flex-column w-100 text-center bg-dark p-2">
+				<h1 class="d-inline-block mx-auto fst-italic">𝒯𝑜𝒹𝒶𝓎'𝓈 𝒯𝒽𝑒𝓇𝒶𝓅𝒾𝓈𝓉</h1>
+				<span class="mt-1">本日の出勤セラピスト</span>
+			</div>
+		</header>
+		<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+		<main>
+		
+			<section>
+				<h2 class="section-title text-center">
+					本日の出勤セラピスト<br />
+					<span>TODAY'S THERAPISTS</span>
+				</h2>
+				<th:block th:insert="~{public/components/public-cast :: public-cast(
+					products=${productsAll},
+					isHorizontalScroll=false
+				)}"></th:block>
+			</section>
+			<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
+			<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>
+		</main>
+	</th:block>
+</html>

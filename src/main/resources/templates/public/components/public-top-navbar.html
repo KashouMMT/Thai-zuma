@@ -1,0 +1,43 @@
+<th:block
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+	th:fragment="public-top-navbar"
+>
+	<div id="top-navbar" class="navbar navbar-dark bg-none fixed-top border-bottom border-warning">
+		<div class="container-fluid p-3 nav-marble">
+			<div class="d-flex w-100 justify-content-between text-center gap-1">
+				<a
+					th:href="@{/{lang}/home(lang=${#locale.language})}"
+					class="nav-link flex-fill nav-marble-link"
+				>
+					トップ<br>ページ
+				</a>
+				<a
+					th:href="@{/{lang}/home/cast(lang=${#locale.language})}"
+					class="nav-link flex-fill nav-marble-link"
+				>
+					セラピスト<br>一覧
+				</a>
+				<a
+					th:href="@{/{lang}/home/newcomers(lang=${#locale.language})}"
+					class="nav-link flex-fill nav-marble-link"
+				>
+					本日の<br>出勤
+				</a>
+				<a
+					th:href="@{/{lang}/home/pricing(lang=${#locale.language})}"
+					class="nav-link flex-fill nav-marble-link"
+				>
+					料金<br>システム
+				</a>
+				<a
+					th:href="@{/{lang}/home/blog(lang=${#locale.language})}"
+					class="nav-link flex-fill nav-marble-link"
+				>
+					ブログ<br>
+					一覧
+				</a>
+			</div>
+		</div>
+	</div>
+</th:block>
