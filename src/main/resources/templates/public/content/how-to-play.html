@@ -1,0 +1,66 @@
+<th:block th:fragment="public-how-to-play"  xmlns:th="http://www.thymeleaf.org">
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<header id="site-header" class="d-flex flex-row justify-content-center align-items-start">
+		<img class="banner-img banner-img-medium"
+		th:src="@{/public/assets/images/hero.jpg}"
+		alt=""/>
+	</header>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<main>
+		<section>
+			<h2 class="section-title nav-velvet text-white mb-1">奥様の実話10カ条</h2>
+			<div class="p-2 text-justify">
+				<ol>
+					<li> 
+						<h3 class="bg-peach p-2 fs-6 text-velvet">会員証のご提示</h3>
+						<p>
+							ご来店時には会員証をご提示下さいませ。<br />
+							ご新規のお客様は会員証を無料で発行いたします。
+						</p>
+					</li>
+					<li>
+						<h3 class="bg-peach p-2 fs-6 text-velvet">受付で女性を選ぶ</h3>
+						<p>
+						まずは受付にてパネルから梅田店在籍の奥様をお選びいただき、その後ご希望のコースをお決めいただきます。<br />
+						（入会金は無料です）
+						</p>
+					</li>
+					<li>
+						<h3 class="bg-peach p-2 fs-6 text-velvet">ご料金のお支払い</h3>
+						<p>
+							ご利用料金をお支払い頂き、待合室でお待ちいただきます。<br />
+							女性のご準備が整い次第ご案内となります。<br />
+							(ご予約のお客様も受付にてご料金を頂戴します。)
+						</p>
+					</li>
+					<li>
+						<h3 class="bg-peach p-2 fs-6 text-velvet">ご案内</h3>
+						<p>
+							エレベーターでのご案内となります。<br />
+							お二人だけの秘密の時間のスタートです。
+						</p>
+					</li>
+					<li>
+						<h3 class="bg-peach p-2 fs-6 text-velvet">チェックイン</h3>
+						<p>
+							梅田の兎我野町で、お近くのホテルに女性と一緒に入室していただきます。<br />
+							プレイ開始でございます。どうぞお楽しみくださいませ。
+						</p>
+					</li>
+					<li>
+						<h3 class="bg-peach p-2 fs-6 text-velvet">お別れ</h3>
+						<p>
+							お時間になりましたらご一緒にチェックアウトです。
+						</p>
+					</li>
+				</ol>
+			</div>
+		</section>
+		<th:block
+			th:insert="~{public/components/public-cta-bridge}"
+		></th:block>
+		<th:block
+			th:insert="~{public/components/public-bottom-nav}"
+		></th:block>
+	</main>
+</th:block>

@@ -31,36 +31,16 @@
 		/>
 		<section>
 			<h2 class="section-title nav-velvet text-white mb-1">最新ニュース</h2>
-			<div class="container ps-1 pe-1">
-				<h5 class="bg-peach p-2 fs-6 text-velvet">【アンダーコース♪】</h5>
-				<span class="text-muted fs-6">2025年12月01日 07:00</span>
-				<div class="row">
-					<div class="col-5">
-						<img
-							class="w-100"
-							th:src="@{/public/assets/images/test_event.jpg}"
-							alt=""
-						/>
-					</div>
-					<div class="col-7">
-						「大人女性」の素晴らしさを肌で感じていただけるように、
-						１８歳~２８歳の男性を対象にお得に遊んでいただけるようになりました♪
-						是非この機会にご利用くださいませ。
-						＊初見の女性に限らせていただきます。
-					</div>
-				</div>
-				<div class="d-flex justify-content-end">
-					<a class="btn btn-info mt-4 ms-auto">
-						もっと見る
-					</a>
-				</div>
-			</div>
+			<th:block
+				th:insert="~{public/components/public-blog(
+					blogs=${blogs},
+					isButtonShown=${isButtonShown}
+				)}"></th:block>
 		</section>
 		<section>
 			<h2 class="section-title nav-velvet text-white">
 				イベント
 			</h2>
-		
 			<div class="event-gallery">
 				<div class="event-track">
 					<a class="event-slide" href="#">

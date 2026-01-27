@@ -1,22 +1,4 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-cast(products)">
-	<!-- 
-	<div class="container">
-		<div class="row">
-			<div class="col-12 col-md-6 mt-5" 
-			th:each="product : ${products}">
-				<a class="card-item" 
-				th:href="@{/{lang}/home/cast/{productId}(lang=${#locale.language},productId=${product.id})}">
-					<img th:src="@{'/files/' + ${product.getMainProductImage}}" alt=""/>
-					<div class="card-overlay">
-						<div class="card-text">
-							<span th:text="${product.title} + '/' + ${product.age}"></span>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-	 -->
 	 <div class="container">
 	 	<th:block th:each="product: ${products}">
 	 		<div class="row mt-3">

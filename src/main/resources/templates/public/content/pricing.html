@@ -1,139 +1,55 @@
 <th:block th:fragment="public-collection"  xmlns:th="http://www.thymeleaf.org">
-	<header id="site-header"
-		class="d-flex flex-row justify-content-center align-items-start"
-		style="color: white; margin-top: 5rem"
-	>
-		<div class="d-flex flex-column w-100 text-center bg-dark p-2">
-			<h1 class="d-inline-block mx-auto fst-italic">𝒫𝓇𝒾𝒸𝒾𝓃𝑔</h1>
-			<span class="mt-1">料金システム</span>
-		</div>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<header id="site-header" class="d-flex flex-row justify-content-center align-items-start">
+		<img class="banner-img banner-img-medium"
+		th:src="@{/public/assets/images/hero.jpg}"
+		alt=""/>
 	</header>
 	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
 	<main>
 		<section>
-			<h2 class="section-title text-center">
-				料金システム<br />
-				<span>PRICING</span>
-			</h2>
-			<div class="container" style="font-weight:600;">
-				<div class="row">
-					<div class="col-6">60分</div>
-					<div class="col-6 text-end">7,000 ฿</div>
-				</div>
-				<hr />
-				<div class="row">
-					<div class="col-6">90分</div>
-					<div class="col-6 text-end">10,000 ฿</div>
-				</div>
-				<hr />
-				<div class="row">
-					<div class="col-6">120分</div>
-					<div class="col-6 text-end">14,000 ฿</div>
-				</div>
-				<hr />
-				<div class="row">
-					<div class="col-3">指名料</div>
-				
-					<div class="col-9">
-						<div class="row align-items-center mb-1">
-							<div class="col-2 text-start">
-								<span style="color:gold;font-size:26px;line-height:1;">♥</span>
-							</div>
-							<div class="col-5">黄色</div>
-							<div class="col-5 text-end">4,000 ฿</div>
-						</div>
-				
-						<div class="row align-items-center mb-1">
-							<div class="col-2 text-start">
-								<span style="color:pink;font-size:26px;line-height:1;">♥</span>
-							</div>
-							<div class="col-5">桃色</div>
-							<div class="col-5 text-end">3,000 ฿</div>
-						</div>
-				
-						<div class="row align-items-center mb-1">
-							<div class="col-2 text-start">
-								<span style="color:aqua;font-size:26px;line-height:1;">♥</span>
-							</div>
-							<div class="col-5">水色</div>
-							<div class="col-5 text-end">2,000 ฿</div>
-						</div>
-				
-						<div class="row align-items-center mb-1">
-							<div class="col-2 text-start">
-								<span style="color:purple;font-size:26px;line-height:1;">♥</span>
-							</div>
-							<div class="col-5">紫色</div>
-							<div class="col-5 text-end">1,000 ฿</div>
-						</div>
-				
-						<div class="row align-items-center">
-							<div class="col-2 text-start">
-								<span style="color:white;font-size:26px;line-height:1;">♥</span>
-							</div>
-							<div class="col-5">白色</div>
-							<div class="col-5 text-end">0 ฿</div>
-						</div>
-					</div>
-				</div>
-				<hr />
-				<div class="row">
-					<div class="col-12 text-center">指名料は各女の子の詳細ページにてご確認ください。</div>
-				</div>
-			</div>
+			<h2 class="section-title nav-velvet text-white mb-1">システム</h2>
+			<img class="banner-img banner-img-short"
+			th:src="@{/public/assets/images/pricing_1.png}"
+			alt="" />
+			<img class="banner-img banner-img-short"
+			th:src="@{/public/assets/images/pricing_2.png}"
+			alt="" />
+			<img th:src="@{/public/assets/images/pricing_content_1.jpg}"
+			class="w-100 object-fit"
+			alt="" />
+			<img th:src="@{/public/assets/images/pricing_content_2.jpg}"
+			class="w-100 object-fit"
+			alt="" />
+			<img th:src="@{/public/assets/images/pricing_content_3.jpg}"
+			class="w-100 object-fit"
+			alt="" />
+			<img th:src="@{/public/assets/images/pricing_content_4.jpg}"
+			class="w-100 object-fit"
+			alt="" />
+			<img th:src="@{/public/assets/images/pricing_content_5.jpg}"
+			class="w-100 object-fit"
+			alt="" />
 		</section>
 		<section>
-			<h2 class="section-title text-center">
-				基本プレイPlay<br />
-				<span>BASIC PLAY</span>
-			</h2>
-			<div class="container" style="font-weight:600;">
-					<div class="row align-items-center">
-						<div class="col-6">オールヌード</div>
-						<div class="col-6 text-end">密着泡洗体 <br>or<br> 潜望鏡</div>
-					</div>
-					<hr />
-					<div class="row">
-						<div class="col-6">全身リップ</div>
-						<div class="col-6 text-end">ディープキス</div>
-					</div>
-					<hr />
-					<div class="row">
-						<div class="col-6">性感アロマ<br>マッサージ</div>
-						<div class="col-6 text-end">睾丸マッサージ</div>
-					</div>
-					<hr />
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title text-center">
-					注意事項<br />
-					<span>NOTES</span>
-				</h2>
-				<p>
-※下記禁止事項の該当が発覚した場合は、ただちにサービスを中断致します。なお、その際の料金返金には応じられません。<br>
-●コンパニオンの体への必要以上の接触行為、本番要求またそれに付帯する行為など冗談であってもご遠慮ください。<br>
-●過剰サービスの要求や無理強いをされた場合や盗聴盗撮行為カメラ付き携帯での撮影も同様ですので、ご注意ください。（罰金30万円～）<br>
-※万一発見した場合、犯罪行為として警察に通報させていただきます。<br>
-●当店のコンパニオンに対するスカウトなどの引き抜き行為。<br>（罰金50万円～）<br>
-●サービスに不適当な部屋・状況での利用または不潔な部屋など、コンパニオンがサービスを行うのに不適切な場合。<br>
-●サービスされる部屋又は、お宅にお客様以外の第３者がいる。または途中で来られた場合のご利用はお断りしております。<br>
-●不衛生な場所でのご利用で、サービスをするのが難しいと判断した場合。<br>
-●暴力団関係者またはそれに準ずる方。<br>
-●ドラッグ又はそれらに類する薬物（大麻、覚せい剤、シンナー等）を使用されている方。<br>
-●泥酔状態の方。<br>
-●性病または性病と思われる場合。<br>
-●伝染病に感染している方。<br>
-●同業関係者の方。<br>
-●その他当店のスタッフがふさわしくないと判断させて頂いた方やコンパニオンに対する暴言・暴力があった場合。<br>
-●コンパニオンが嫌がる言動があった場合。<br>
-●コンパニオンが脱衣後、若しくは体に触れられてからのチェンジやキャンセル。<br>
-●プレイ時間を過ぎてから当コンパニオンの退出を拒む行為<br>
-●キャンセル、チェンジ不可。やむを得ない場合キャンセル料全額負担となります。<br>
-●当店スタッフより、営業・運営上での注意事項や禁止事項をお守り頂けないと判断した場合<br>
-●その他当店が必要と判断した場合<br>
-なお、上記のような理由によりサービスを中断させて頂いた場合、料金の返金は一切致しかねますので、あらかじめご了承下さい。<br>
-				</p>
+			<h2 class="section-title nav-velvet text-white mb-1">奥様の実話10カ条</h2>
+			<div class="p-2 text-justify">
+				奥様達が安心してより濃厚なサービスを提供できるよう、以下の注意事項をお守り下さい。
+				<ol>
+					<li>本番行為の強要や、店外での個人的な付き合いの強要。</li>
+					<li>ヘルスの範囲を超えた、奥様達の体を傷つけるような行為。</li>
+					<li>薬物を服用してのプレイ、もしくはコンパニオンへの薬物の使用。</li>
+					<li>ビデオカメラ・デジカメ・カメラ付携帯等、各種カメラによる撮影又は盗撮・盗聴などの行為。</li>
+					<li>奥様の私生活を脅かすストーキング等の行為。</li>
+					<li>暴力団関係者又はそれに準ずる方、刺青等のある方。</li>
+					<li>性病の方、若しくはそう受け取られる方。</li>
+					<li>お客様所有のプレイ道具等を使用する行為。</li>
+					<li>同業者及びそれに準ずる者が当店コンパニオンをスカウトする行為。</li>
+					<li>サービス時間後になってもコンパニオンを拘束する、又はそれに等しい行為。
+				当店は改正新風俗営業法に基づいた運営を致しております。
+				上記事項に反したお客様には、然るべき措置をとらせて頂く事もございます。</li>
+				</ol>
+			</div>
 		</section>
 		<th:block
 			th:insert="~{public/components/public-cta-bridge}"

@@ -11,4 +11,5 @@ import com.dev.main.model.Blog;
 public interface BlogRepository extends JpaRepository<Blog, Long>{
 	
 	List<Blog> findAllByOrderByUpdatedAtAsc();
+	List<Blog> findTop1ByOrderByUpdatedAtDesc();
 }

@@ -28,6 +28,11 @@ public class BlogServiceImpl implements BlogService{
 	public List<Blog> getAllBlogs() {
 		return blogRepo.findAll();
 	}
+	
+	@Override
+	public List<Blog> getFirstBlogAsList() {
+		return blogRepo.findTop1ByOrderByUpdatedAtDesc();
+	}
 
 	@Override
 	public List<Blog> getAllBlogsOrderedByUpdatedAt() {

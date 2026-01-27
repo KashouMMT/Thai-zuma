@@ -5,28 +5,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dev.main.service.CategoryService;
-import com.dev.main.service.ProductService;
+import com.dev.main.service.BlogService;
 
 @Controller
 @RequestMapping("/{lang}/home")
 public class HomeController {
-	
-	private final ProductService productService;
-	private final CategoryService categoryService;
 
-	public HomeController(ProductService productService, CategoryService categoryService) {
+	private final BlogService blogService;
+	
+	public HomeController(BlogService blogService) {
 		super();
-		this.productService = productService;
-		this.categoryService = categoryService;
+		this.blogService = blogService;
 	}
 
 	@GetMapping({"","/"})
 	public String homePage(Model model) {
-		
-		model.addAttribute("productsAll",productService.getAllProducts());
-		model.addAttribute("products",productService.getAllFeaturedProductsOrderByFeaturedAt());
-		model.addAttribute("categories",categoryService.getAllCategoriesWithFourFeaturedProducts());
+		model.addAttribute("blogs",blogService.getFirstBlogAsList());
+		model.addAttribute("isButtonShown",true);	
 		model.addAttribute("metaTitle","meta.title");
 		model.addAttribute("metaDescription","meta.description");
 		model.addAttribute("content","public/content/home");

@@ -297,6 +297,7 @@ nav ul li a {
 
 .banner-img-short {
 	aspect-ratio: 32 / 9;
+	max-height: 34px;
 }
 
 .main-content {

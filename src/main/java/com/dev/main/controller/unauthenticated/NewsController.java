@@ -20,9 +20,11 @@ public class NewsController {
 
 	@GetMapping("/blog")
 	public String blogsPage(Model model) {
+		model.addAttribute("blogs",blogService.getAllBlogsOrderedByUpdatedAt());
+		model.addAttribute("isButtonShown",false);
+		
 		model.addAttribute("metaTitle","meta.title.news");
 		model.addAttribute("metaDescription","meta.description.news");
-		model.addAttribute("blogs",blogService.getAllBlogsOrderedByUpdatedAt());
 		model.addAttribute("content","public/content/news");
 		model.addAttribute("canonical","/blog");
 		

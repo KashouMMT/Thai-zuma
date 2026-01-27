@@ -7,6 +7,7 @@ import com.dev.main.model.Blog;
 import com.dev.main.model.User;
 
 public interface BlogService {
+	List<Blog> getFirstBlogAsList();
 	List<Blog> getAllBlogs();
 	List<Blog> getAllBlogsOrderedByUpdatedAt();
 	
