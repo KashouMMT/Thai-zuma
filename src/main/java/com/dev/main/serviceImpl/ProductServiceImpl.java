@@ -111,8 +111,6 @@ public class ProductServiceImpl implements ProductService{
 		product.setDescription(productDto.getDescription());
 		product.setShortDescription(productDto.getShortDescription());
 		product.setCategory(category);
-		product.setAge(productDto.getAge());
-		product.setHeight(productDto.getHeight());
 		product.setCupSize(toCupSize(productDto.getCupSize()));
 		product = productRepo.save(product);
 		for (int i = 0; i < images.length; i++) {
@@ -143,8 +141,6 @@ public class ProductServiceImpl implements ProductService{
 		product.setShortDescription(productDto.getShortDescription());
 		product.setTitle(productDto.getTitle());
 		product.setCategory(category);
-		product.setAge(productDto.getAge());
-		product.setHeight(productDto.getHeight());
 		product.setCupSize(toCupSize(productDto.getCupSize()));
 		
 		boolean hasNoneEmptyImages = images != null && Arrays.stream(images).anyMatch(f -> f != null && !f.isEmpty());

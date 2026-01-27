@@ -6,13 +6,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.9</version>
+		<version>3.5.10</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dev.main</groupId>
-	<artifactId>Rondo</artifactId>
+	<artifactId>ThaiZuma</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Rakuen</name>
+	<name>ThaiZuma</name>
 	<description>A Massage Site</description>
 	<url />
 	<licenses>

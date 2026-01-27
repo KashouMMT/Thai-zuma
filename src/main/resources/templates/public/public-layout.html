@@ -122,8 +122,6 @@ xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 	<link rel="icon" type="image/x-icon" th:href="@{/favicon.png}">
 </head>
 <body>
-
-	<div class="main-bg"></div>
 	<div class="content-wrapper box-shadow">
 		<th:block th:insert="~{public/components/public-menu-navbar :: public-menu-navbar}"></th:block>
 		<th:block th:insert="~{${content}}"></th:block>

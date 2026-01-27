@@ -31,12 +31,8 @@ import jakarta.persistence.OrderBy;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "products")
@@ -55,14 +51,6 @@ public class Product {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "cup_size",nullable = false, length = 20)
 	private CupSize cupSize = CupSize.A_TO_C_CUP;
-	
-	@Positive @Min(18) @Max(100) @Digits(integer = 3, fraction = 0)
-	@Column(nullable = false)
-	private int age = 18;
-	
-	@Positive @Min(1) @Max(9999) @Digits(integer = 4, fraction = 0)
-	@Column(nullable = false)
-	private int height = 1;
 	
 	@NotNull
 	@Column(name = "short_description",nullable = false, length = 255)
@@ -127,30 +115,6 @@ public class Product {
 		
 	}
 
-	public Product(Long id, @NotBlank String title, CupSize cupSize,
-			@Positive @Min(18) @Max(100) @Digits(integer = 3, fraction = 0) int age,
-			@Positive @Min(1) @Max(9999) @Digits(integer = 4, fraction = 0) int height,
-			@NotNull String shortDescription, @NotNull String description, boolean featured, Instant featuredAt,
-			boolean isNewcomer, Long sortOrder, @NotNull LocalDateTime createdAt, LocalDateTime updatedAt,
-			Category category, List<ProductImage> productImages) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.cupSize = cupSize;
-		this.age = age;
-		this.height = height;
-		this.shortDescription = shortDescription;
-		this.description = description;
-		this.featured = featured;
-		this.featuredAt = featuredAt;
-		this.isNewcomer = isNewcomer;
-		this.sortOrder = sortOrder;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-		this.category = category;
-		this.productImages = productImages;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -173,22 +137,6 @@ public class Product {
 
 	public void setCupSize(CupSize cupSize) {
 		this.cupSize = cupSize;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
 	}
 
 	public String getShortDescription() {

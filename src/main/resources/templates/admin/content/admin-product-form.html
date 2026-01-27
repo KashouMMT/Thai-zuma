@@ -90,22 +90,6 @@
 								</div>
 							</div>
 							<div class="row mt-3 p-2">
-								<div class="col-12 col-lg-4 toggle-input-wrapper">
-									<label class="form-label" th:text="#{admin.cast-age}"></label>
-									<input class="form-control" type="number" min="18" max="100"
-										step="1" required th:field="*{age}"
-										th:classappend="${#fields.hasErrors('age')} ? ' is-invalid'">
-									<div class="invalid-feedback"
-										th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
-								</div>
-								<div class="col-12 col-lg-4 toggle-input-wrapper">
-									<label class="form-label" th:text="#{admin.cast-height}"></label>
-									<input class="form-control" type="number" min="1" max="9999"
-										step="1" required th:field="*{height}"
-										th:classappend="${#fields.hasErrors('height')} ? ' is-invalid'">
-									<div class="invalid-feedback"
-										th:if="${#fields.hasErrors('height')}" th:errors="*{height}"></div>
-								</div>
 								<div class="col-12 col-lg-4">
 									<select class="form-select" th:field="*{cupSize}"
 										data-type="dropdown">
@@ -143,11 +127,6 @@
 										placeholder="Enter new Category"
 										th:classappend="${#fields.hasErrors('categoryName')} ? ' is-invalid'"
 										disabled />
-									<!-- 
-								    <div class="invalid-feedback"
-										th:if="${#fields.hasErrors('categoryName')}"
-										th:errors="*{categoryName}"></div>
-									 -->
 									<button class="icon-btn d-none" data-type="remove"
 										type="button">−</button>
 								</div>

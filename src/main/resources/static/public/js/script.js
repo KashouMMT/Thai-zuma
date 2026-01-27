@@ -2,55 +2,106 @@ document.addEventListener("DOMContentLoaded", initUI);
 
 function initUI() {
     initOffcanvasMenu();
-    initFloatingActions();
-	topNavbarBehavior();
-	updateGallery();
-	nextImage();
-	prevImage();
+    //initFloatingActions();
+	initEventGallery();
 }
 
-let currentIndex = 0;
+/* =============================
+   Event Gallery (Swipe + Auto)
+============================= */
+function initEventGallery() {
+	const gallery = document.querySelector('.event-gallery');
+	const track = document.querySelector('.event-track');
+	const slides = document.querySelectorAll('.event-slide');
+	const dots = document.querySelectorAll('.event-dots .dot');
 
-function updateGallery() {
-	const track = document.querySelector('.gallery-track');
-	if (!track) return;
-	track.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+	if (!gallery || !track || slides.length === 0 || dots.length === 0) return;
 
-function nextImage() {
-	const images = document.querySelectorAll('.gallery-image');
-	if (!images.length) return;
-	currentIndex = (currentIndex + 1) % images.length;
-	updateGallery();
-}
+	let index = 0;
+	let startX = 0;
+	let currentTranslate = 0;
+	let prevTranslate = 0;
+	let isDragging = false;
+	let autoTimer = null;
 
-function prevImage() {
-	const images = document.querySelectorAll('.gallery-image');
-	if (!images.length) return;
-	currentIndex = (currentIndex - 1 + images.length) % images.length;
-	updateGallery();
-}
+	const slideCount = slides.length;
+	const interval = 4000; // autoplay interval (ms)
+	const thresholdRatio = 0.25;
 
-/* -----------------------------
-   TopNavbar Behavior
------------------------------ */
-function topNavbarBehavior() {
-	const topNavbar	= document.getElementById("top-navbar");
-	const header = document.getElementById("site-header");
-	if(!topNavbar || !header) return;
-	
-	const observer = new IntersectionObserver(
-		([entry]) => {
-			if(entry.isIntersecting) {
-				topNavbar.classList.remove("fixed-top");
-			} else {
-				topNavbar.classList.add("fixed-top");
-			}
-		},{
-			threshold: 0
-		}
-	);
-	observer.observe(header);
+	/* ---------- Core ---------- */
+
+	function updateSlider(animated = true) {
+		track.style.transition = animated ? 'transform 0.4s ease' : 'none';
+		track.style.transform = `translateX(-${index * 100}%)`;
+
+		dots.forEach(d => d.classList.remove('active'));
+		dots[index].classList.add('active');
+	}
+
+	function nextSlide() {
+		index = (index + 1) % slideCount;
+		updateSlider();
+	}
+
+	function startAutoPlay() {
+		stopAutoPlay();
+		autoTimer = setInterval(nextSlide, interval);
+	}
+
+	function stopAutoPlay() {
+		if (autoTimer) clearInterval(autoTimer);
+	}
+
+	/* ---------- Dots ---------- */
+
+	dots.forEach(dot => {
+		dot.addEventListener('click', () => {
+			index = Number(dot.dataset.index);
+			updateSlider();
+			startAutoPlay();
+		});
+	});
+
+	/* ---------- Swipe / Drag ---------- */
+
+	function onPointerDown(e) {
+		stopAutoPlay();
+		isDragging = true;
+		startX = e.clientX;
+		prevTranslate = -index * gallery.offsetWidth;
+		track.style.transition = 'none';
+	}
+
+	function onPointerMove(e) {
+		if (!isDragging) return;
+		const diff = e.clientX - startX;
+		currentTranslate = prevTranslate + diff;
+		track.style.transform = `translateX(${currentTranslate}px)`;
+	}
+
+	function onPointerUp() {
+		if (!isDragging) return;
+		isDragging = false;
+
+		const movedBy = currentTranslate - prevTranslate;
+		const threshold = gallery.offsetWidth * thresholdRatio;
+
+		if (movedBy < -threshold && index < slideCount - 1) index++;
+		else if (movedBy > threshold && index > 0) index--;
+
+		updateSlider();
+		startAutoPlay();
+	}
+
+	gallery.addEventListener('pointerdown', onPointerDown);
+	window.addEventListener('pointermove', onPointerMove);
+	window.addEventListener('pointerup', onPointerUp);
+	gallery.addEventListener('pointerleave', onPointerUp);
+
+	/* ---------- Init ---------- */
+
+	updateSlider(false);
+	startAutoPlay();
 }
 
 /* -----------------------------
@@ -75,7 +126,7 @@ function initOffcanvasMenu() {
 
 /* -----------------------------
    Floating action buttons
------------------------------ */
+----------------------------- 
 function initFloatingActions() {
     const header = document.querySelector("header");
 	const footer = document.querySelector("footer");
@@ -110,3 +161,4 @@ function initFloatingActions() {
     observer.observe(header);
     observer.observe(footer);
 }
+*/

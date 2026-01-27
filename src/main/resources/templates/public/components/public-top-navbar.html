@@ -4,39 +4,59 @@
 	th:fragment="public-top-navbar"
 >
 	<div id="top-navbar" class="navbar navbar-dark bg-none fixed-top border-bottom border-warning">
-		<div class="container-fluid p-3 nav-marble">
-			<div class="d-flex w-100 justify-content-between text-center gap-1">
+		<div class="container-fluid p-3 nav-velvet">
+			<div class="d-flex w-100 justify-content-between text-center align-items-center gap-1">
 				<a
 					th:href="@{/{lang}/home(lang=${#locale.language})}"
-					class="nav-link flex-fill nav-marble-link"
+					class="nav-link nav-velvet-link"
 				>
-					トップ<br>ページ
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-heart" viewBox="0 0 16 16">
+					  <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982"/>
+					  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+					</svg><br />
+					トップ
 				</a>
 				<a
 					th:href="@{/{lang}/home/cast(lang=${#locale.language})}"
-					class="nav-link flex-fill nav-marble-link"
+					class="nav-link  nav-velvet-link"
 				>
-					セラピスト<br>一覧
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+				</svg><br />
+					奥様紹介
 				</a>
 				<a
 					th:href="@{/{lang}/home/newcomers(lang=${#locale.language})}"
-					class="nav-link flex-fill nav-marble-link"
+					class="nav-link nav-velvet-link"
 				>
-					本日の<br>出勤
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+					  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+					  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+					</svg><br />
+					出勤情報
 				</a>
 				<a
 					th:href="@{/{lang}/home/pricing(lang=${#locale.language})}"
-					class="nav-link flex-fill nav-marble-link"
+					class="nav-link nav-velvet-link"
 				>
-					料金<br>システム
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+				  <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+				  <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+				</svg><br />
+					料金システム
 				</a>
-				<a
-					th:href="@{/{lang}/home/blog(lang=${#locale.language})}"
-					class="nav-link flex-fill nav-marble-link"
+				<button
+					id="menuBtn"
+					class="nav-link nav-velvet-link"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#menuOffcanvas"
+					style="border-radius: 0px"
 				>
-					ブログ<br>
-					一覧
-				</a>
+					☰<br />
+					メニュー
+				</button>
+				<!--<th:block th:insert="~{public/components/public-menu-navbar :: public-menu-navbar}"></th:block>-->
 			</div>
 		</div>
 	</div>

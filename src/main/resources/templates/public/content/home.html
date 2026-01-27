@@ -4,67 +4,94 @@
 		style="color: white"
 	>
 		<img
-			class="main-logo-img"
-			th:src="@{/public/assets/images/logo_rondo.png}"
+			class="banner-img banner-img-tall"
+			th:src="@{/public/assets/images/banner_1.jpg}"
 			alt=""
 		/>
 	</header>
 	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
 	<main class="main-content">
-		<section>
-			<a class="mt-3 d-block" th:href="@{/{lang}/home/cast(lang=${#locale.language})}">
-				<img class="img-fluid d-block mx-auto rounded shadow mt-3"
-				th:src="@{/public/assets/images/banner.png}"
-				style="width: 800px;"
-				alt="promotional banner"
-				loading="lazy"
-				decoding="async">
-			</a>
+		<section class="text-center">
+			受付時間10:00～4:00(最終受付)
 		</section>
+		<img
+			class="banner-img banner-img-medium"
+			th:src="@{/public/assets/images/banner_2.jpg}"
+			alt=""
+		/>
+		<img
+			class="banner-img banner-img-medium"
+			th:src="@{/public/assets/images/banner_3.jpg}"
+			alt=""
+		/>
+		<img
+			class="banner-img banner-img-medium"
+			th:src="@{/public/assets/images/banner_4.jpg}"
+			alt=""
+		/>
 		<section>
-			<h2 class="section-title text-center">
-				本日の出勤<br />
-				<span>セラピスト</span>
-			</h2>
-			<th:block th:insert="~{public/components/public-cast :: public-cast(
-				products=${products},
-				isHorizontalScroll=true
-			)}"></th:block>
-		</section>
-		<section>
-			<h2 class="section-title text-center">
-				新人情報 <br />
-				<span>NEWFACE</span>
-			</h2>
-			<th:block th:insert="~{public/components/public-cast :: public-cast(
-				products=${productsAll},
-				isHorizontalScroll=true
-			)}"></th:block>
-		</section>
-		<section>
-			<div class="container-fluid text-start">
-				<h2 class="text-center" style="font-weight:800;">RONDO</h2>
-				<div class="row mt-3 p-2 border-gold align-items-center">
-					<div class="col-6 col-md-2 p-2">業種</div>
-					<div class="col-6 col-md-10 p-2">大人のメンズエステ</div>
-				</div>
-				<div class="row mt-3 p-2 border-gold align-items-center">
-					<div class="col-6 col-md-2 p2">派遣先</div>
-					<div class="col-6 col-md-10 p-2">
-						バンコク市内全域
+			<h2 class="section-title nav-velvet text-white mb-1">最新ニュース</h2>
+			<div class="container ps-1 pe-1">
+				<h5 class="bg-peach p-2 fs-6 text-velvet">【アンダーコース♪】</h5>
+				<span class="text-muted fs-6">2025年12月01日 07:00</span>
+				<div class="row">
+					<div class="col-5">
+						<img
+							class="w-100"
+							th:src="@{/public/assets/images/test_event.jpg}"
+							alt=""
+						/>
+					</div>
+					<div class="col-7">
+						「大人女性」の素晴らしさを肌で感じていただけるように、
+						１８歳~２８歳の男性を対象にお得に遊んでいただけるようになりました♪
+						是非この機会にご利用くださいませ。
+						＊初見の女性に限らせていただきます。
 					</div>
 				</div>
-				<div class="row mt-3 p-2 border-gold align-items-center">
-					<div class="col-6 col-md-2 p2">営業時間</div>
-					<div class="col-6 col-md-10 p-2">12:00-翌05:00</div>
+				<div class="d-flex justify-content-end">
+					<a class="btn btn-info mt-4 ms-auto">
+						もっと見る
+					</a>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2 class="section-title nav-velvet text-white">
+				イベント
+			</h2>
+		
+			<div class="event-gallery">
+				<div class="event-track">
+					<a class="event-slide" href="#">
+						<img 
+						th:src="@{/public/assets/images/event_1.jpg}"
+						alt="Event 1" />
+					</a>
+					<a class="event-slide" href="#">
+					<img
+						th:src="@{/public/assets/images/event_2.jpg}"
+						alt="Event 2" />
+					</a>
+					<a class="event-slide" href="#">
+						<img 
+							th:src="@{/public/assets/images/event_3.jpg}"
+							alt="Event 3" />
+					</a>
+				</div>
+		
+				<div class="event-dots">
+					<button class="dot active" data-index="0"></button>
+					<button class="dot" data-index="1"></button>
+					<button class="dot" data-index="2"></button>
 				</div>
 			</div>
 		</section>
 		<th:block
-			th:insert="~{public/components/public-cta-bridge}"
+			th:insert="~{public/components/public-bottom-nav}"
 		></th:block>
 		<th:block
-			th:insert="~{public/components/public-bottom-nav}"
+			th:insert="~{public/components/public-cta-bridge}"
 		></th:block>
 	</main>
 </th:block>

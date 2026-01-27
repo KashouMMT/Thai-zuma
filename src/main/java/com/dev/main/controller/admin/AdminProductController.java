@@ -82,7 +82,7 @@ public class AdminProductController {
 		BindingResult result1,
         @Valid @ModelAttribute CategoryDto categoryDto,
         BindingResult result2,
-        @RequestParam(required = false) MultipartFile[] images,HttpServletRequest request,
+        @RequestParam(name = "images",required = false) MultipartFile[] images,HttpServletRequest request,
         Model model) {
 		
 		String lang = LangPathUtils.resolveLangFromPath(request);
@@ -117,9 +117,7 @@ public class AdminProductController {
 		productDto.setTitle(product.getTitle());
 		productDto.setDescription(product.getDescription());
 		productDto.setShortDescription(product.getShortDescription());
-		productDto.setAge(product.getAge());
 		productDto.setCupSize(product.getCupSize().name());
-		productDto.setHeight(product.getHeight());
 		productDto.setCategory(product.getCategory());
 		productDto.setSortOrder(product.getSortOrder());
 		categoryDto.setCategoryName(product.getCategory().getCategoryName());
