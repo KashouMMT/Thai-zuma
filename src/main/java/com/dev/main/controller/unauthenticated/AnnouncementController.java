@@ -20,11 +20,14 @@ public class AnnouncementController {
 	
 	@GetMapping("/news")
 	public String getAnnouncementPage(Model model) {
+		model.addAttribute("announcements",announcementService.getAllAnnouncements());
+		model.addAttribute("isButtonShown",false);
+		model.addAttribute("isUrl",true);
+		
 		model.addAttribute("canonical","/news");
 		model.addAttribute("content","public/content/announcements");
 		model.addAttribute("metaTitle","meta.title.announcement");
 		model.addAttribute("metaDescription","meta.description.announcement");
-		model.addAttribute("announcements",announcementService.getAllAnnouncements());
 		
 		return "public/public-layout";
 	}

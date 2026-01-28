@@ -8,6 +8,7 @@ import com.dev.main.model.User;
 
 public interface AnnouncementService {
 	List<Announcement> getAllAnnouncements();
+	List<Announcement> getFirstFiveAnnouments();
 	
 	Announcement getAnnouncementById(Long id);
 	

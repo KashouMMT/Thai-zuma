@@ -1,17 +1,19 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-announcements">
-	<header id="site-header"
-		class="d-flex flex-row justify-content-center align-items-start"
-		style="color: white; margin-top: 5rem"
-	>
-		<div class="d-flex flex-column w-100 text-center bg-dark p-2">
-			<h1 class="d-inline-block mx-auto fst-italic">𝓔𝓥𝓔𝓝𝓣𝓢</h1>
-			<span class="mt-1">イベント情報</span>
-		</div>
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<header id="site-header" class="d-flex flex-row justify-content-center align-items-start">
+		<img class="banner-img banner-img-medium"
+		th:src="@{/public/assets/images/hero.jpg}"
+		alt=""/>
 	</header>
 	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
 	<main>
 		<section>
-			<h2 class="section-title nav-velvet text-white mb-1">最新ニュース</h2>
+			<h2 class="section-title nav-velvet text-white mb-1">イベント</h2>
+			<th:block th:insert="~{public/components/public-blog(
+				blogs=${announcements},
+				isButtonShown=${isButtonShown},
+				isUrl=${isUrl}
+				)}"></th:block>
 		</section>
 		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
 		<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>

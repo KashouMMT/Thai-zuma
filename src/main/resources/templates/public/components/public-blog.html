@@ -1,6 +1,22 @@
-<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-blog(blogs,isButtonShown)">
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-blog(blogs,isButtonShown,isUrl)">
 	<div class="container ps-1 pe-1">
 		<th:block th:each="blog,idx : ${blogs}">
+		<th:block th:if="${isUrl} == true">
+			<a th:href="${blog.url}"
+			class="text-decoration-none text-dark">
+				<h5 class="bg-peach p-2 fs-6 text-velvet mt-1" th:text="${blog.title}"></h5>
+				<span class="text-muted fs-6" th:text="${'Date: ' + #temporals.format(blog.createdAt, 'yyyy-mm-dd HH:mm')}"></span>
+				<div class="row">
+					<div class="col-5">
+						<img class="w-100" th:src="@{'/files/' + ${blog.imageName}}" alt=""/>
+					</div>
+					<div class="col-7">
+						<p th:utext="${blog.content}"></p>
+					</div>
+				</div>
+			</a>
+		</th:block>
+		<th:block th:unless="${isUrl} == true">
 			<h5 class="bg-peach p-2 fs-6 text-velvet mt-1" th:text="${blog.title}"></h5>
 			<span class="text-muted fs-6" th:text="${'Date: ' + #temporals.format(blog.createdAt, 'yyyy-mm-dd HH:mm')}"></span>
 			<div class="row">
@@ -11,6 +27,7 @@
 					<p th:utext="${blog.content}"></p>
 				</div>
 			</div>
+		</th:block>
 			<th:block th:if="${isButtonShown} == true">
 				<div class="d-flex justify-content-end">
 					<a th:href="@{/{lang}/home/blog(lang=${#locale.language})}" 

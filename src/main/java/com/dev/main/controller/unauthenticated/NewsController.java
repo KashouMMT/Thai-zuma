@@ -22,7 +22,7 @@ public class NewsController {
 	public String blogsPage(Model model) {
 		model.addAttribute("blogs",blogService.getAllBlogsOrderedByUpdatedAt());
 		model.addAttribute("isButtonShown",false);
-		
+		model.addAttribute("isUrl",false);
 		model.addAttribute("metaTitle","meta.title.news");
 		model.addAttribute("metaDescription","meta.description.news");
 		model.addAttribute("content","public/content/news");

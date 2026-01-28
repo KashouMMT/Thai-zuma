@@ -1,5 +1,7 @@
 package com.dev.main.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -12,16 +14,14 @@ public class AnnouncementDto {
 	@NotBlank(message = "Content must not be empty")
 	private String content;
 	
+	private String url;
+	
+	private MultipartFile image;
+	
+	private String imageName;
+	
 	public AnnouncementDto() {
 		
-	}
-
-	public AnnouncementDto(
-			@NotBlank(message = "Title must not be empty") @Size(message = "Title must be less than 100", max = 100, min = 0) String title,
-			@NotBlank(message = "Content must not be empty") String content) {
-		super();
-		this.title = title;
-		this.content = content;
 	}
 
 	public String getTitle() {
@@ -38,5 +38,29 @@ public class AnnouncementDto {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 }

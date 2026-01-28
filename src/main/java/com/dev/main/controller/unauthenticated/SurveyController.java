@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/{lang}/home")
-public class ReviewController {
-
-	@GetMapping("/review")
-	public String getReviewPage(Model model) {
-		model.addAttribute("content","public/content/review");
-		model.addAttribute("metaTitle","meta.title.review");
-		model.addAttribute("metaDescription","meta.description.review");
-		model.addAttribute("canonical","/review");
+public class SurveyController {
+	
+	@GetMapping("/survey")
+	public String surveyFormPage(Model model) {
+		model.addAttribute("metaTitle","meta.title.news");
+		model.addAttribute("metaDescription","meta.description.news");
+		model.addAttribute("content","public/content/survey");
+		model.addAttribute("canonical","/survey");
 		return "public/public-layout";
 	}
 }

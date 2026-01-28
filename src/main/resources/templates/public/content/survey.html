@@ -1,0 +1,581 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="public-blogs">
+	<th:block th:replace="~{public/components/public-top-navbar :: public-top-navbar}"></th:block>
+	<header id="site-header" class="d-flex flex-row justify-content-center align-items-start">
+		<img class="banner-img banner-img-medium"
+		th:src="@{/public/assets/images/hero.jpg}"
+		alt=""/>
+	</header>
+	<main>
+		<section>
+			<h2 class="section-title nav-velvet text-white mb-1">アンケート</h2>
+			<form class="container mt-4">
+				<h3 class="bg-peach text-velvet p-2 fs-6 mt-1 w-100">お客様情報</h3>
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						会員番号<br/>(※お預かりのお客様はカタカナで入力して下さい) <br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須 半角英数字・全角カナ入力</span>
+					</label>
+					<input type="text"
+			        	class="form-control"
+			          	id=""
+			           	name=""
+			           	placeholder="">
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						ご利用店舗<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">選択してください</option>
+			      		<option value="梅田店">梅田店</option>
+			      		<option value="なんば店">なんば店</option>
+			      		<option value="谷九店">谷九店</option>
+					</select>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						当店のご利用は何回目ですか？<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">選択してください</option>
+			      		<option value="初めて">初めて</option>
+			      		<option value="2回以上">2回以上</option>
+			      		<option value="5回以上">5回以上</option>
+			      		<option value="10回以上">10回以上</option>
+					</select>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						今回お遊びされた女性	<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">Need to change select box to respect to database</option>
+					</select>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						お客様のメールアドレス	<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<input type="text"
+			        	class="form-control"
+			          	id=""
+			           	name=""
+			           	placeholder="">
+				</div>
+				<h3 class="bg-peach text-velvet p-2 fs-6 mt-1 w-100">女性について</h3>
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						女性を選んだ理由<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<input type="text"
+			        	class="form-control"
+			          	id=""
+			           	name=""
+			           	placeholder="">
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						お選び頂いた女性の基本サービスは？<br/>（複数回答可）<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<!-- Checkbox -->
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">女性からの挨拶。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">女性の自己紹介。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">手を繋ぐ又は腕組み。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">お客様の靴を揃える。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">上着はハンガーにかける。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">お風呂の準備。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">ベッドの上などの準備。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">私物を隠す等の気遣い。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">トイレに行くか確認する。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">隣にピッタリくっつき座る。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">飲み物が必要であれば両手で渡す。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">一緒にお風呂に行くように促す。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">服をお互いに脱がせ合う。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">靴下から脱がせて小タオルに挟む。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">シャワーの温度を確認する。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">イソジン準備して両手で渡す。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">キスは満足いくものだった。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">タバコの有無の確認をする。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">基本くっついて離れない。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">着替えの手伝い。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">お客様の忘れ物が無いか確認する。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">上着を着せて、腕を組んで外まで。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">お見送りは最後までしっかりしていた。</label>
+					</div>
+				</div>
+				<hr />
+				<div class="mb-3">
+				   	<label for="name" class="form-label" style="font-size: 0.9rem;">
+						上記の点以外でお気に召された点があれば。<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+				    <textarea class="form-control" id="content" name="content"
+				    rows="4"></textarea>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						今回受けたサービス内容は<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">ディープキス。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">クンニ。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">ローション。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">素股。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">全身リップ。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">生フェラ。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">口内発射。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">69。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">アナル舐め。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">玉舐め。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">受け身。</label>
+					</div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						女性に対しお客様の満足度を点数で表すとすれば？<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">選択してください</option>
+			      		<option value="初めて">100点満点</option>
+			      		<option value="2回以上">90点以上</option>
+			      		<option value="5回以上">80点～90点</option>
+			      		<option value="5回以上">70点～80点</option>
+			      		<option value="5回以上">60点～70点</option>
+			      		<option value="5回以上">50点～60点</option>
+			      		<option value="5回以上">40点～50点</option>
+			      		<option value="5回以上">30点～40点</option>
+			      		<option value="5回以上">20点～30点</option>
+			      		<option value="5回以上">10点～20点</option>
+			      		<option value="10">10点以下</option>
+					</select>
+				</div>
+				<hr />
+				<h3 class="bg-peach text-velvet p-2 fs-6 mt-1 w-100">男性スタッフについて</h3>
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						ご来店時のお出迎えはいかがでしたか？<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status1" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	非常に良い
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status1" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	良い
+				      	</label>
+				    </div>
+   				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status1" id="c" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	普通
+				      	</label>
+				    </div>
+    				<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status1" id="d" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	悪い
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						ご案内時の接客はいかがでしたでしょうか？<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status2" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	非常に良い
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status2" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	良い
+				      	</label>
+				    </div>
+   				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status2" id="c" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	普通
+				      	</label>
+				    </div>
+    				<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status2" id="d" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	悪い
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						受付スタッフの接客はいかがでしたでしょうか？	<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status3" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	非常に良い
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status3" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	良い
+				      	</label>
+				    </div>
+   				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status3" id="c" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	普通
+				      	</label>
+				    </div>
+    				<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status3" id="d" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	悪い
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						スタッフの電話対応は如何でしたか？（お電話をされたお客様のみ）<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status4" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	非常に良い
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status4" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	良い
+				      	</label>
+				    </div>
+   				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status4" id="c" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	普通
+				      	</label>
+				    </div>
+    				<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status4" id="d" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	悪い
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						店内の清掃は行き届いていましたか？<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status5" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	非常に良い
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status5" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	良い
+				      	</label>
+				    </div>
+   				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status5" id="c" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	普通
+				      	</label>
+				    </div>
+    				<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status5" id="d" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	悪い
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						男性スタッフに対しお客様の満足度を点数で表すとすれば？<br />
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">選択してください</option>
+			      		<option value="初めて">100点満点</option>
+			      		<option value="2回以上">90点以上</option>
+			      		<option value="5回以上">80点～90点</option>
+			      		<option value="5回以上">70点～80点</option>
+			      		<option value="5回以上">60点～70点</option>
+			      		<option value="5回以上">50点～60点</option>
+			      		<option value="5回以上">40点～50点</option>
+			      		<option value="5回以上">30点～40点</option>
+			      		<option value="5回以上">20点～30点</option>
+			      		<option value="5回以上">10点～20点</option>
+			      		<option value="10">10点以下</option>
+					</select>
+				</div>
+				<hr />
+				<h3 class="bg-peach text-velvet p-2 fs-6 mt-1 w-100">当店について</h3>
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						【「こんなイベントやってよ！」ご意見をお聞かせ下さい】<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<input type="text"
+			        	class="form-control"
+			          	id=""
+			           	name=""
+			           	placeholder="">
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						なぜ梅田店を選んだのか <br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<input type="text"
+			        	class="form-control"
+			          	id=""
+			           	name=""
+			           	placeholder="">
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						当店を選ばれた理由は？（ご新規様のみ）<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">スタッフの対応がいいから。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">イベントが気に入った。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">料金設定が良い。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">ホームページで見て。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">クチコミで良いと聞いたから。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">待ち合わせ型の方が好きだから。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">女性の出勤人数が多い。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">風俗サイトでよく見ていたから。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">雑誌・新聞等を見て。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">画像がエロい。</label>
+					</div>
+					<div class="form-check mb-3">
+				   		<input class="form-check-input" type="checkbox" id="agree" name="agree">
+					    <label class="form-check-label" for="agree">人妻が好きだから。</label>
+					</div>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						お店に対しお客様の満足度を点数で表すとすれば？<br />
+					</label>
+					<select class="form-select"
+		            id="skills"
+		            name="skills">
+			      		<option value="選択してください">選択してください</option>
+			      		<option value="初めて">100点満点</option>
+			      		<option value="2回以上">90点以上</option>
+			      		<option value="5回以上">80点～90点</option>
+			      		<option value="5回以上">70点～80点</option>
+			      		<option value="5回以上">60点～70点</option>
+			      		<option value="5回以上">50点～60点</option>
+			      		<option value="5回以上">40点～50点</option>
+			      		<option value="5回以上">30点～40点</option>
+			      		<option value="5回以上">20点～30点</option>
+			      		<option value="5回以上">10点～20点</option>
+			      		<option value="10">10点以下</option>
+					</select>
+				</div>
+				<hr />
+				<div class="mb-3">
+				   	<label for="name" class="form-label" style="font-size: 0.9rem;">
+						当店へのご意見・ご要望がありましたらご記入くださいませ。<br />
+						<span class="text-danger" style="font-size: 0.7rem;">※必須</span>
+					</label>
+				    <textarea class="form-control" id="content" name="content"
+				    rows="4"></textarea>
+				</div>
+				<hr />
+				<div class="mb-3">
+					<label for="name" class="form-label" style="font-size: 0.9rem;">
+						同時にメルマガ会員へのご登録はいかがでしょうか？<br />
+					</label>
+					<div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status6" id="a" value="public" checked>
+				      	<label class="form-check-label" for="statusPublic">
+				        	登録する
+				      	</label>
+				    </div>
+				    <div class="form-check">
+				    	<input class="form-check-input" type="radio" name="status6" id="b" value="private">
+				      	<label class="form-check-label" for="statusPrivate">
+				        	登録しない
+				      	</label>
+				    </div>
+				</div>
+				<hr />
+				<button type="submit" class="btn btn-primary">
+			   		Submit
+				</button>
+			</form>
+		</section>
+		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>
+		<th:block th:insert="~{public/components/public-bottom-nav}"></th:block>
+	</main>
+</th:block>

@@ -4,25 +4,35 @@ import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.dev.main.dto.AnnouncementDto;
 import com.dev.main.model.Announcement;
 import com.dev.main.model.User;
 import com.dev.main.repository.AnnouncementRepository;
 import com.dev.main.service.AnnouncementService;
+import com.dev.main.service.FileStorageService;
 
 @Service
 public class AnnouncementServiceImpl implements AnnouncementService{
 
 	private final AnnouncementRepository announcementRepo;
-	
-	public AnnouncementServiceImpl(AnnouncementRepository announcementRepository) {
+	private final FileStorageService storageService;
+
+	public AnnouncementServiceImpl(AnnouncementRepository announcementRepo, FileStorageService storageService) {
 		super();
-		this.announcementRepo = announcementRepository;
+		this.announcementRepo = announcementRepo;
+		this.storageService = storageService;
 	}
-	
+
 	@Override
 	public List<Announcement> getAllAnnouncements() {
 		return announcementRepo.findAll();
+	}
+	
+	@Override
+	public List<Announcement> getFirstFiveAnnouments() {
+		return announcementRepo.findTop5ByOrderByUpdatedAtDesc();
 	}
 
 	@Override
@@ -35,7 +45,13 @@ public class AnnouncementServiceImpl implements AnnouncementService{
 		Announcement announcement = new Announcement();
 		announcement.setTitle(announcementDto.getTitle());
 		announcement.setContent(announcementDto.getContent());
+		announcement.setUrl(announcementDto.getUrl());
 		announcement.setUser(user);
+		MultipartFile image = announcementDto.getImage();
+		if(!Objects.isNull(image) && !image.isEmpty()) {
+			String filename = storageService.save(image);
+			if(filename != null) announcement.setImageName(filename);
+		}
 		announcementRepo.save(announcement);
 	}
 
@@ -45,7 +61,14 @@ public class AnnouncementServiceImpl implements AnnouncementService{
 		if(Objects.isNull(announcement) || announcement == null) return;
 		announcement.setTitle(announcementDto.getTitle());
 		announcement.setContent(announcementDto.getContent());
+		announcement.setUrl(announcementDto.getUrl());
 		announcement.setUser(user);
+		MultipartFile image = announcementDto.getImage();
+		if(!Objects.isNull(image) && !image.isEmpty()) {
+			storageService.deleteIfExists(announcement.getImageName());
+			String filename = storageService.save(image);
+			if(filename != null) announcement.setImageName(filename);
+		}
 		announcementRepo.save(announcement);
 	}
 
@@ -53,5 +76,4 @@ public class AnnouncementServiceImpl implements AnnouncementService{
 	public void deleteAnnouncement(Long id) {
 		announcementRepo.deleteById(id);
 	}
-
 }

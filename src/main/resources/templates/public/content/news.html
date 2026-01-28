@@ -11,7 +11,8 @@
 			
 			<th:block th:insert="~{public/components/public-blog(
 				blogs=${blogs},
-				isButtonShown=${isButtonShown}
+				isButtonShown=${isButtonShown},
+				isUrl=${isUrl}
 				)}"></th:block>
 		</section>
 		<th:block th:insert="~{public/components/public-cta-bridge}"></th:block>

@@ -21,14 +21,11 @@
 					</a>
 				</div>
 				<div class="card-body">
-					<div th:if="${success}" class="alert alert-success" role="alert"
-						th:text="${success}"></div>
+					<div th:if="${success}" class="alert alert-success" role="alert" th:text="${success}"></div>
 					<div class="alert alert-info" role="alert">Click to edit blog</div>
 					<div class="container-fluid">
 						<div th:each="blog : ${blogs}" class="row mt-2 pt-3 pb-3 border">
-
-							<a class="col-4"
-								th:href="@{/{lang}/admin/edit-blog/{id}(id=${blog.id},lang=${#locale.language})}">
+							<a class="col-4" th:href="@{/{lang}/admin/edit-blog/{id}(id=${blog.id},lang=${#locale.language})}">
 								<th:block th:if="${blog.imageName != null}">
 									<img class="card-img object-fit-cover"
 										th:src="@{'/files/' + ${blog.imageName}}" alt="Fancy Product">
@@ -36,11 +33,9 @@
 									<p th:text="#{admin.blog.image-not-attached}"></p>
 								</th:block>
 							</a>
-
 							<div class="col-8">
 								<div class="d-flex justify-content-between align-items-start">
 									<span class="fw-bolder" th:text="'Title: ' + ${blog.title}"></span>
-
 									<span class="d-flex flex-column text-end"> <a
 										th:href="@{/{lang}/admin/delete-blog/{id}(id=${blog.id},lang=${#locale.language})}"
 										class="btn btn-sm btn-danger position-relative z-3"

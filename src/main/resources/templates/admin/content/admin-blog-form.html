@@ -35,12 +35,11 @@
 									th:text="#{admin.blog-image}"></label>
 								<!-- Upload box -->
 								<label class="image-upload-box w-100" data-role="dropzone">
-									<span class="d-block fs-3 fw-bold text-secondary">＋</span> <span
-									class="text-muted small" th:text="#{admin.image-instruction}"></span>
+									<span class="d-block fs-3 fw-bold text-secondary">＋</span> 
+									<span class="text-muted small" th:text="#{admin.image-instruction}"></span>
 									<input type="file" name="image" accept="image/*" class="d-none"
 									data-role="input">
 								</label>
-
 								<!-- Previews (new selections) -->
 								<div class="d-flex flex-wrap gap-2 mt-2" data-role="preview"></div>
 								<div th:if="${objectDto.imageName != null}">

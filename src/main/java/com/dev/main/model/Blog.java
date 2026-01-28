@@ -72,18 +72,6 @@ public class Blog {
 		
 	}
 
-	public Blog(Long id, @NotNull String title, User user, @NotNull String content, String imageName,
-			@NotNull LocalDateTime createdAt, LocalDateTime updatedAt) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.user = user;
-		this.content = content;
-		this.imageName = imageName;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-
 	public Long getId() {
 		return id;
 	}

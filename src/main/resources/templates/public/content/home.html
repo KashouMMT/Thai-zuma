@@ -34,7 +34,8 @@
 			<th:block
 				th:insert="~{public/components/public-blog(
 					blogs=${blogs},
-					isButtonShown=${isButtonShown}
+					isButtonShown=${isButtonShown},
+					isUrl=${isUrl}
 				)}"></th:block>
 		</section>
 		<section>
@@ -43,21 +44,11 @@
 			</h2>
 			<div class="event-gallery">
 				<div class="event-track">
-					<a class="event-slide" href="#">
-						<img 
-						th:src="@{/public/assets/images/event_1.jpg}"
-						alt="Event 1" />
-					</a>
-					<a class="event-slide" href="#">
-					<img
-						th:src="@{/public/assets/images/event_2.jpg}"
-						alt="Event 2" />
-					</a>
-					<a class="event-slide" href="#">
-						<img 
-							th:src="@{/public/assets/images/event_3.jpg}"
-							alt="Event 3" />
-					</a>
+					<th:block th:each="announcement : ${announcements}" >
+						<a th:href="${announcement.url}" class="event-slide">
+							<img th:src="@{'/files/' + ${announcement.imageName}}" alt="" />
+						</a>
+					</th:block>
 				</div>
 		
 				<div class="event-dots">
