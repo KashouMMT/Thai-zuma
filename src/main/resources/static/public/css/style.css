@@ -1,10 +1,26 @@
 @font-face {
 	font-family: "Hina Mincho";
-	src: url("/public/assets/font/HinaMincho-Regular.woff") format("woff"),
+	/*src: url("/public/assets/font/HinaMincho-Regular.woff") format("woff"),
 		url("/public/assets/font/HinaMincho-Regular.woff2") format("woff2");
+	*/
+	src: url("/public/assets/font/ud-digi-kyokasho-n-r.woff") format("woff"),
+		url("/public/assets/font/ud-digi-kyokasho-n-r.woff2") format(woff2);
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
+}
+
+@font-face {
+	font-family: "UD Digi Kyokasho";
+	src: url("/public/assets/font/ud-digi-kyokasho-n-r.woff") format("woff"),
+		url("/public/assets/font/ud-digi-kyokasho-n-r.woff2") format(woff2);
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-kyokasho {
+	font-family: "UD Digi Kyokasho", sans-serif;
 }
 
 .bg-velvet {
