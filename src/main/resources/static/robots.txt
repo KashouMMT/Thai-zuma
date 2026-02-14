@@ -11,4 +11,4 @@ Disallow: /ws/
 Disallow: /actuator/
 Disallow: /error/
 
-Sitemap: https://rondo-thai.com/sitemap.xml
+Sitemap: https://thai-chuuzuma.com/sitemap.xml

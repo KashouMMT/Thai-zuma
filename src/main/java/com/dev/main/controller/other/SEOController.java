@@ -15,7 +15,7 @@ import com.dev.main.service.ProductService;
 @RestController
 public class SEOController {
 
-    private static final String BASE_URL = "https://rondo-thai.com";
+    private static final String BASE_URL = "https://thai-chuuzuma.com";
 
     private final ProductService productService;
 
@@ -58,13 +58,10 @@ public class SEOController {
         
         urls.add(new SitemapUrl(BASE_URL + "/ja/home", "daily", "1.0"));
         urls.add(new SitemapUrl(BASE_URL + "/ja/home/cast", "daily", "0.9"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/newcomers", "daily", "0.9"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/contact-us", "yearly", "0.5"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/job-listing", "yearly", "0.4"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/option-menu", "yearly", "0.4"));
+        urls.add(new SitemapUrl(BASE_URL + "/ja/home/how-to-play", "yearly", "0.6"));
+        urls.add(new SitemapUrl(BASE_URL + "/ja/home/news", "weekly", "0.7"));
         urls.add(new SitemapUrl(BASE_URL + "/ja/home/pricing", "yearly", "0.5"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/review", "yearly", "0.5"));
-        urls.add(new SitemapUrl(BASE_URL + "/ja/home/news","weekly","0.6"));
+        urls.add(new SitemapUrl(BASE_URL + "/ja/home/survey", "yearly", "0.4"));
         
 //        urls.add(new SitemapUrl(BASE_URL + "/ko/home", "daily", "1.0"));
 //        urls.add(new SitemapUrl(BASE_URL + "/ko/home/cast", "daily", "0.9"));

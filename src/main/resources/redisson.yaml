@@ -1,6 +1,6 @@
 singleServerConfig:
-  address: "redis://127.0.0.1:6379"
-  password: "P@ssword925"
+  address: "redis://thai-zuma-redis:6379"
+  password: "ThaiZuma925"
   database: 0
 threads: 4
 nettyThreads: 4

@@ -27,11 +27,11 @@ xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 	<!-- ========== OPEN GRAPH (FACEBOOK, LINE, KAKAO, etc.) ========== -->
 	
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://rondo-thai.com/">
+	<meta property="og:url" content="https://thai-chuuzuma.com">
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
-	<meta property="og:image" content="https://clubartemis-thai.com/public/assets/images/logo_rondo.png">
-	<meta property="og:site_name" content="Rondo">
+	<meta property="og:image" content="https://thai-chuuzuma.com/public/assets/images/hero.jgp">
+	<meta property="og:site_name" content="ThaiChuuzuma">
 	<meta property="og:locale" content="ja">
 	
 	<!-- ========== TWITTER CARD ========== -->
@@ -39,29 +39,28 @@ xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="">
 	<meta name="twitter:description" content="">
-	<meta name="twitter:image" content="https://rondo-thai.com/public/assets/images/logo_rondo.png">
+	<meta name="twitter:image" content="https://thai-chuuzuma.com/public/assets/images/hero.jpg">
 	 
 	<!-- ========== ROBOTS TXT ========== -->
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
 	<!-- ========== SITEMAP ========== -->
 	
-	<meta name="sitemap" content="https://rondo-thai.com/sitemap.xml">
+	<meta name="sitemap" content="https://thai-chuuzuma.com/sitemap.xml">
 	 
 	<!-- ========== CANONICAL ========== -->
 	<th:block th:if="${canonical != null}">
-		<link rel="canonical" th:href="${'https://rondo-thai.com/' + #locale.language + canonical}">
+		<link rel="canonical" th:href="${'https://thai-chuuzuma.com/' + #locale.language + canonical}">
 	</th:block>
 	
-	<!-- ========== JSON-LD ========== -->
-
+	<!-- ========== JSON-LD ========== 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Rondo",
-  "url": "https://rondo-thai.com",
-  "image": "https://rondo-thai.com/public/assets/images/logo.png",
+  "url": "https://thai-chuuzuma.com",
+  "image": "https://thai-chuuzuma.com/public/assets/images/hero.jpg",
   "description": "バンコク・パタヤで日本人向けの高級出張サービス。日本語対応で安心。",
   "address": {
     "@type": "PostalAddress",
@@ -116,6 +115,7 @@ xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
  ]
 }
 </script>
+-->
 	<!-- ========== STYLESHEETS ========== -->
 	<link rel="stylesheet" type="text/css" th:href="@{/public/bootstrap-5.3.7-dist/css/bootstrap.min.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/public/css/style.css}">
